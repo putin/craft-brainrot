@@ -1,0 +1,22 @@
+{
+    "name": "Craft Brainrot",
+    "short_name": "CraftBrainrot",
+    "icons": [
+      {
+        "src": "/assets/img/brainrot-craft.avif.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/img/brainrot-craft.avif",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "https://craftbrainrot.net",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+  }
+
+
