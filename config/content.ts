@@ -62,6 +62,7 @@ export const content = {
       links: [
         { text: "About Us", href: "/about" },
         { text: "Contact Us", href: "/contact" },
+        { text: "Partners", href: "/partners" },
         { text: "Privacy Policy", href: "/privacy-policy" },
         { text: "Terms of Service", href: "/terms-of-service" }
       ]
