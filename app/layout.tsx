@@ -8,6 +8,11 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   title: `${siteConfig.name} | Unblocked Free Game | ${siteConfig.domain}`,
   description: siteConfig.description,
   openGraph: {
