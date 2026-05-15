@@ -18,6 +18,7 @@
 # misc
 .DS_Store
 *.pem
+Thumbs.db
 
 # debug
 npm-debug.log*
@@ -25,7 +26,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
+.env.local
 .env*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
@@ -34,8 +40,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# lock files (optional: keep package-lock.json if you want reproducible builds)
+# package-lock.json
 
-# sitemap
+# sitemap & robots (generated at build time)
 /public/sitemap*.xml
-public/robots.txt
+/public/robots.txt
+
+# bing verification (generated at build time)
+/public/*.txt
+
+# editor
+.idea/
+.vscode/
+*.swp
+*.swo

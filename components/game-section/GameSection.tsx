@@ -100,8 +100,8 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
           "mb-0 rounded-none" // 移除底部边距，移除圆角
         )}
       >
-        {/* 检查是否为外部链接 */}
-        {content.gameSection.game.url.startsWith('http') ? (
+        {/* 检查是否为外部链接（有 externalUrl 且与 url 不同时视为需要跳转按钮） */}
+        {content.gameSection.game.url === content.gameSection.game.externalUrl && !content.gameSection.game.url.includes('igroutka') && !content.gameSection.game.url.includes('crazygames') ? (
           // 外部链接 - 显示游戏预览和按钮
           <div className="w-full aspect-video bg-gradient-to-br from-purple-600 to-blue-600 flex flex-col items-center justify-center text-white relative overflow-hidden">
             {/* 背景装饰 */}
@@ -151,8 +151,8 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
         {/* 这里可以添加其他游戏控制按钮 */}
         {/* 例如：音量控制、设置按钮、帮助按钮等 */}
 
-        {/* 全屏切换按钮 - 仅在内部嵌入时显示 */}
-        {!content.gameSection.game.url.startsWith('http') && (
+        {/* 全屏切换按钮 - 仅在 iframe 嵌入时显示 */}
+        {!(content.gameSection.game.url === content.gameSection.game.externalUrl && !content.gameSection.game.url.includes('igroutka') && !content.gameSection.game.url.includes('crazygames')) && (
           <Button
             onClick={toggleFullscreen} // 点击切换全屏
             size="icon" // 图标尺寸

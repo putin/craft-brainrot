@@ -19,6 +19,7 @@ import { Footer } from "@/components/layout/Footer";
 
 // 首页内容组件导入
 import { GameSection } from "@/components/game-section/GameSection";
+import { GameGrid } from "@/components/game-grid/GameGrid";
 import { Features } from "@/components/features/Features";
 import { WhatIs } from "@/components/what-is/WhatIs";
 import { HowToPlay } from "@/components/how-to-play/HowToPlay";
@@ -27,7 +28,7 @@ import { Rating } from "@/components/rating/Rating";
 
 /**
  * 首页模板组件
- * 
+ *
  * 功能：
  * - 提供完整的首页布局和内容
  * - 管理搜索查询状态
@@ -38,16 +39,16 @@ export function HomeTemplate() {
   // 状态管理
   // searchQuery: 存储用户输入的搜索关键词
   const [searchQuery, setSearchQuery] = useState("");
-  
+
   // activeGame: 存储当前选中的游戏ID，用于高亮显示
   const [activeGame, setActiveGame] = useState<string | null>(null);
 
   /**
    * 处理搜索表单提交
-   * 
+   *
    * 功能：
    * 1. 阻止表单默认提交行为
-   * 
+   *
    * @param e - React 表单事件对象
    */
   const handleSearch = (e: React.FormEvent) => {
@@ -56,7 +57,7 @@ export function HomeTemplate() {
 
   /**
    * 渲染首页内容
-   * 
+   *
    * 页面结构：
    * 1. Header - 页面头部，包含导航和搜索功能
    * 2. Main - 主要内容区域，包含所有首页组件
@@ -65,7 +66,7 @@ export function HomeTemplate() {
   return (
     // 根容器：最小高度为屏幕高度，背景色为主题背景色
     <div className="min-h-screen bg-background">
-      
+
       {/* 页面头部组件 */}
       {/* 传递搜索相关的状态和回调函数 */}
       <Header
@@ -77,12 +78,13 @@ export function HomeTemplate() {
       {/* 主要内容区域 */}
       {/* 使用容器布局，居中对齐，添加内边距 */}
       <main className="container mx-auto px-4 py-8">
-        
+
         {/* 游戏展示区域 - 主要游戏内容 */}
         <GameSection />
-        
 
-        
+        {/* 更多游戏网格区域 */}
+        <GameGrid />
+
         {/* 游戏特性介绍区域 */}
         <Features />
         

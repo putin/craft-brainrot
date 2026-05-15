@@ -80,9 +80,9 @@ export const content = {
   gameSection: {
     title: "Craft Brainrot",
     game: {
-      url: 'https://www.crazygames.com/game/craft-brainrot',
+      url: 'https://g.igroutka.ru/games/1316/LTQwlYiRXCv54unq/07592a73-552b-44c3-a16b-805a1603a6e3/index.html',
       title: "craft-brainrot",
-      externalUrl: 'https://www.crazygames.com/game/craft-brainrot'
+      externalUrl: 'https://craft-brainrot.com/'
     }
   },
 
