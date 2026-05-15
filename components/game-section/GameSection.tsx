@@ -100,8 +100,8 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
           "mb-0 rounded-none" // 移除底部边距，移除圆角
         )}
       >
-        {/* 检查是否为外部链接（有 externalUrl 且与 url 不同时视为需要跳转按钮） */}
-        {content.gameSection.game.url === content.gameSection.game.externalUrl && !content.gameSection.game.url.includes('igroutka') && !content.gameSection.game.url.includes('crazygames') ? (
+        {/* 检查是否为可嵌入地址：url 与 externalUrl 不同，则视为 iframe 嵌入 */}
+        {(content.gameSection.game.url as string) === (content.gameSection.game.externalUrl as string) ? (
           // 外部链接 - 显示游戏预览和按钮
           <div className="w-full aspect-video bg-gradient-to-br from-purple-600 to-blue-600 flex flex-col items-center justify-center text-white relative overflow-hidden">
             {/* 背景装饰 */}
@@ -110,7 +110,7 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
             <div className="absolute top-4 right-4 text-2xl">🧠</div>
             <div className="absolute bottom-4 left-4 text-2xl">⚡</div>
             <div className="absolute bottom-4 right-4 text-2xl">🎯</div>
-            
+
             {/* 游戏信息 */}
             <div className="relative z-10 text-center">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
@@ -119,7 +119,7 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
               <p className="text-lg md:text-xl mb-8 opacity-90 max-w-md">
                 Experience the viral merge game that's taking over the internet!
               </p>
-              
+
               {/* 游戏按钮 */}
               <Button
                 onClick={() => window.open(content.gameSection.game.url, '_blank')}
@@ -128,7 +128,7 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
               >
                 🎮 Play Now on CrazyGames
               </Button>
-              
+
               <p className="text-sm opacity-75 mt-4">
                 Opens in a new tab
               </p>
@@ -152,7 +152,7 @@ export function GameSection({ content = defaultContent }: GameSectionProps) {
         {/* 例如：音量控制、设置按钮、帮助按钮等 */}
 
         {/* 全屏切换按钮 - 仅在 iframe 嵌入时显示 */}
-        {!(content.gameSection.game.url === content.gameSection.game.externalUrl && !content.gameSection.game.url.includes('igroutka') && !content.gameSection.game.url.includes('crazygames')) && (
+        {(content.gameSection.game.url as string) !== (content.gameSection.game.externalUrl as string) && (
           <Button
             onClick={toggleFullscreen} // 点击切换全屏
             size="icon" // 图标尺寸
